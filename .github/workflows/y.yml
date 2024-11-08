@@ -19,10 +19,10 @@ jobs:
           cl /EHsc chrome_decrypt.cpp oleaut32.lib shell32.lib advapi32.lib shlwapi.lib
 
       - name: Save output
+        shell: powershell
         run: |
-          mkdir artifacts
-          copy chrome_decrypt.exe artifacts/
-        shell: cmd
+          New-Item -ItemType Directory -Force -Path artifacts
+          Copy-Item chrome_decrypt.exe artifacts/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3

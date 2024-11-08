@@ -20,7 +20,7 @@ jobs:
 
       - name: Save output
         run: |
-          mkdir -p artifacts
+          mkdir artifacts
           copy chrome_decrypt.exe artifacts/
         shell: cmd
 
